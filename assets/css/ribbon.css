@@ -1,0 +1,48 @@
+﻿
+.close-ribbon{
+  position: absolute;
+  top: 0;
+  right: 1em;
+  z-index: 1;
+  color: #eee;
+  font-size: 2em;
+  cursor: pointer;
+   width: 1.2em;
+  line-height: 4.5em;
+  -webkit-transition: line-height 0.5s;
+  transition: line-height 0.5s;
+}
+.close-ribbon:after {
+  content: "";
+  font-size: 0.5em;
+  position: absolute;
+  height: 1.2em; 
+  z-index: -1;
+  top: -1em;
+  border-top-width: 3.5em;
+  border-bottom-color: transparent;
+  right: 0;
+  -webkit-transition: height 0.5s;
+  transition: height 0.5s;
+}
+.close-ribbon:before {
+  content: "";
+  font-size: 0.5em;
+  position: absolute;
+  top: -1em;
+  right: 3em;
+  border-width: 0 0 1em 0.7em;
+  z-index: -1;
+}
+.close-ribbon:hover:after{
+  border-bottom-color: transparent;
+  -webkit-transition: height 0.5s;
+  transition: height 0.5s;
+}
+.close-ribbon:hover{
+  -webkit-transition: line-height 0.5s;
+  transition: line-height 0.5s;
+}
+.ribon-modal{
+  padding: 5em 0;
+}

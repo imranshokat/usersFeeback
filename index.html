@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Feedback</title>
+    <meta name="description" content="Users feedback" />
+    <meta name="keywords" content="feedback," />
+    
+    <!-- Web Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+    <!-- Bootstrap core CSS -->
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- Font Awesome CSS -->
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <!-- Animate css -->
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <!-- Magnific css -->
+    <link href="assets/css/magnific-popup.css" rel="stylesheet">
+    <!-- Custom styles CSS -->
+    <link href="assets/css/style.css" rel="stylesheet" media="screen">
+    <!-- Responsive CSS -->
+    <link href="assets/css/responsive.css" rel="stylesheet">
+    <!-- Elegant Icons -->
+    <!--Rating Css-->
+    <link href="assets/css/rating.css" rel="stylesheet">
+
+    <!--    Ribbon CSS-->
+
+    <link href="assets/css/ribbon.css" rel="stylesheet" />
+    <!--    Pricestyle css-->
+    <link href="assets/css/pricestyle.css" rel="stylesheet">
+    <link href="assets/css/iziToast.css" rel="stylesheet" />
+</head>
+<body id="tablebody">
+    <!-- Preloader -->
+    <div id="tt-preloader">
+        <div id="pre-status">
+            <div class="preload-placeholder"></div>
+        </div>
+    </div>
+    <div id="search">
+        <button type="button" class="close">×</button>
+        <form>
+            <input id="searchBox" type="search" value="" placeholder="type topic name" />
+
+        </form>
+        <button id="searchButton" class="btn btn-primary">Search</button>
+    </div>
+    <!-- Navigation -->
+    <header id="newProductHeader" class="header">
+        <nav class="navbar navbar-custom" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" id="homeButton" href="index.html"><img src="assets/images/log-01.png" alt=""></a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="custom-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li>
+                            <a>Home <span class="caret"></span> </a>
+                            <ul id="menuCategories" class="dropdown-menu" role="menu">
+                                <li>
+                                    <a id="sub1">Index 1</a>
+                                    <a id="sub2">Index 2</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li id="noSignIn" style="display:none;"><a href="" data-toggle="modal" data-target="#modallogin">Sign In</a></li>
+                        <li>
+                            <a href="#" id="topsearchbutton"> <span class="glyphicon glyphicon-search"></span></a>
+                        </li>
+                        <li id="userID" class="dropdown">
+                            <a id="userNameDisplay" href="#" class="" data-toggle="dropdown"><span id="GreetingsUser"></span> <span class="caret"></span></a>
+                            <ul id="navRight" class="dropdown-menu">
+                                <li><a href="#">Prefferences</a></li>
+                                <li class="divider"></li>
+                                <li><a id="userLogout" href="#">Sign Out</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <!-- .container -->
+        </nav>
+    </header>
+
+    <div class="jumbotron" id="Top">
+
+        <img class="jumbotronImages" src="assets/images/writing.png">
+        <p class="centeredParagraph">Give Your Feedback here</p>
+    </div>
+
+    
+    <section class="section">
+        <div class="container">
+            <div class="col-lg-12 col-sm-12 col-md-12">
+                
+                <div id="myCarousel" class="carousel slide col-lg-8 col-md-8 col-sm-12 col-lg-offset-2" data-ride="carousel" data-interval="false">                  
+
+                    <div id="usersfeedbacks"  class="col-lg-12 col-md-12 col-sm-12 productbox">
+                        <div style="margin:2%">
+                            <h1 style="border-bottom: 1px solid #eee;" class="pricetext ">Comments</h1>
+                            <br>
+                            <div id="allFeedback">
+
+                            </div>                          
+                            <div style="display:none;" id="validateDiv" class="alert alert-danger">
+                                
+                            </div>
+                            <form id="userFeedbackForm" style="margin-top: 2%;" onsubmit="return submitFeedback();">
+                                <div class="form-group">
+                                    <h3 class="sbold blog-comments-title">Leave a comment:</h3>
+                                    <br>
+                                    <div class="form-group">
+                                        <label>Email <span class="textcolor">*</span></label>
+                                        <input id="Email" name="Email" class="form-control placeholder-no-fix" type="email" required="required" placeholder="Email" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Topic <span class="textcolor">*</span></label>
+                                        <input id="Topic" name="Topic" class="form-control placeholder-no-fix" type="text" required="required" placeholder="Topic" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Message <span class="textcolor">*</span></label>
+                                        <textarea id="feedbackText" name="feedbackText" rows="5" class="form-control c-square" required="required" placeholder="Type your message"></textarea>
+                                    </div>                                   
+                                </div>
+                                <div class="form-group" style="text-align:center">
+                                    <button type="submit" id="submit-btn-question" class="btn btn-success uppercase">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="productprice">
+                            <!--<h2>Comments Summary</h2>-->
+                            <h1 class="pricetext" style="border-bottom: 1px solid #eee;">Comments Summary</h1>
+                            <br>
+                            <ul id="feedbackSummary" class="dash">
+                               
+                            </ul>
+                        </div>
+                        
+                    </div>                 
+                </div>
+                <!-- End Carousel -->
+            </div>
+        </div>
+    </section>
+    <section class="section section-padding"></section>  
+    <!-- Javascript files -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.stellar.min.js"></script>
+    <script src="assets/js/jquery.sticky.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
+
+
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+    <script src="assets/js/iziToast.min.js"></script>
+    <script src="assets/js/smoothscroll.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/typewriter.js"></script>
+    <script src="assets/js/jquery.inview.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/base.js"></script>
+    <script src="assets/js/scripts.js"></script>
+
+    <script src="assets/js/comments.js"></script>  
+</body>
+</html>
